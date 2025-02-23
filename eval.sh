@@ -7,15 +7,15 @@ TASK=aime24
 #TASK=math_500
 OUTPUT_DIR=data/evals/$MODEL
 
-# lighteval vllm $MODEL_ARGS "custom|$TASK|0|0" \
-#     --custom-tasks src/open_r1/evaluate.py \
-#     --use-chat-template \
-#     --output-dir $OUTPUT_DIR 
-
-
-lighteval vllm \
-    "eval_config.yaml" \
-    "custom|$TASK|0|0" \
+lighteval vllm $MODEL_ARGS "custom|$TASK|0|0" \
     --custom-tasks src/open_r1/evaluate.py \
     --use-chat-template \
-    --output-dir $OUTPUT_DIR
+    --output-dir $OUTPUT_DIR 
+
+
+# lighteval vllm \
+#     "eval_config.yaml" \
+#     "custom|$TASK|0|0" \
+#     --custom-tasks src/open_r1/evaluate.py \
+#     --use-chat-template \
+#     --output-dir $OUTPUT_DIR
