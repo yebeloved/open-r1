@@ -149,7 +149,7 @@ def main(script_args, training_args, model_args):
 
     # Load the dataset
     dataset = load_dataset(script_args.dataset_name, name=script_args.dataset_config)
-    dataset['train'] = dataset['train'].select(range(10))
+    dataset['train'] = dataset['train'].select(range(1000))
 
     ################
     # Load tokenizer
